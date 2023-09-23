@@ -1,0 +1,7 @@
+if (DEFINED QT5_CMAKE_ROOT)
+    list(APPEND CMAKE_PREFIX_PATH ${QT5_CMAKE_ROOT})
+elseif(DEFINED ENV{QT5_CMAKE_ROOT})
+    list(APPEND CMAKE_PREFIX_PATH $ENV{QT5_CMAKE_ROOT})
+else()
+    message(FATAL_ERROR "A environment variable or a cmake parameter named QT5_CMAKE_ROOT should be specified as 'path/to/Qt5/lib/cmake/Qt5'.")
+endif()
